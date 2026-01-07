@@ -1,0 +1,74 @@
+{
+    "name": "akinsoftdev/sendinboxmail-laravel",
+    "description": "SendInboxMail Mail Transport Driver for Laravel - A seamless integration for sending emails through SendInboxMail API",
+    "keywords": [
+        "akinsoftdev",
+        "akinsoft",
+        "laravel",
+        "mail",
+        "transport",
+        "sendinboxmail",
+        "email",
+        "mailer"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/akinsoftdev/sendinboxmail-laravel",
+    "support": {
+        "issues": "https://github.com/akinsoftdev/sendinboxmail-laravel/issues",
+        "source": "https://github.com/akinsoftdev/sendinboxmail-laravel"
+    },
+    "authors": [
+        {
+            "name": "AKINSOFT",
+            "email": "programlama@akinsoft.com.tr",
+            "homepage": "https://www.akinsoft.com.tr"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "illuminate/mail": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "symfony/mailer": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.0|^3.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Akinsoft\\SendInboxMail\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Akinsoft\\SendInboxMail\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "test-coverage": "pest --coverage",
+        "format": "pint",
+        "analyse": "phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Akinsoft\\SendInboxMail\\SendInboxMailServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+
