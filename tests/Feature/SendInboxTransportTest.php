@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Akinsoft\SendInboxMail\Exceptions\SendInboxMailException;
-use Akinsoft\SendInboxMail\Transport\SendInboxTransport;
+use Akinsoft\SendInboxMail\Transport\SendInboxMailTransport;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Component\Mime\Email;
@@ -13,7 +13,7 @@ beforeEach(function () {
 });
 
 it('can create transport instance', function () {
-    $transport = new SendInboxTransport(
+    $transport = new SendInboxMailTransport(
         url: 'https://notify.sendinboxmail.com/manage/send.php',
         apikey: 'test-key',
         newsId: 1,
@@ -66,7 +66,7 @@ it('throws exception on failed response', function () {
         ], 200),
     ]);
 
-    $transport = new SendInboxTransport(
+    $transport = new SendInboxMailTransport(
         url: 'https://notify.sendinboxmail.com/manage/send.php',
         apikey: 'test-key',
         newsId: 1,
@@ -102,7 +102,7 @@ it('throws exception on connection error', function () {
         '*' => Http::response(null, 500),
     ]);
 
-    $transport = new SendInboxTransport(
+    $transport = new SendInboxMailTransport(
         url: 'https://notify.sendinboxmail.com/manage/send.php',
         apikey: 'test-key',
         newsId: 1,
