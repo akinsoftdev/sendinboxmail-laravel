@@ -144,7 +144,7 @@ The package supports inline attachments (embedded images):
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `url` | SendInboxMail API endpoint URL | - |
+| `url` | SendInboxMail API endpoint URL | https://notify.sendinboxmail.com/manage/send.php |
 | `apikey` | Your SendInboxMail API key | - |
 | `news_id` | Campaign/News identifier | - |
 | `sender_id` | Sender profile identifier | - |
